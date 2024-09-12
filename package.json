@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
     "format": "prettier --write \"src/**/*.{ts,html,scss}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,html,scss}\""
+    "format:check": "prettier --check \"src/**/*.{ts,html,scss}\"",
+    "precommit":"npm run format:check && npm run lint:fix"
   },
   "private": true,
   "dependencies": {
