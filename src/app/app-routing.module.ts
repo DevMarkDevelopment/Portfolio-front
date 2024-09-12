@@ -1,13 +1,17 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import {AddTransactionComponent} from "./add-transaction/add-transaction.component";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from "@angular/common/http";
 
-const routes: Routes = [{
-  path: "addTransaction", component: AddTransactionComponent
-}];
+const routes: Routes = [
+  {
+    path: "",
+    loadChildren: () => import("./transactions/transactions.module").then(m => m.TransactionsModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule, HttpClientModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
