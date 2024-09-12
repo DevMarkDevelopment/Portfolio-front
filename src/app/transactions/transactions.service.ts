@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class TransactionsService {
-  private readonly url = "http://localhost:3001/"
+  private readonly url = 'http://localhost:3001/';
   constructor(private http: HttpClient) {}
 
   getTransactions() {
